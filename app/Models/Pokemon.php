@@ -8,8 +8,8 @@ class Pokemon extends Model
 {
     protected $guarded = ['id'];
 
-    public function pokemon_abilities()
+    public function abilities()
     {
-        return $this->hasMany('pokemon_abilities');
+        return $this->belongsToMany(Abilities::class, 'pokemon_abilities', 'pokemon_id', 'abilities_id');
     }
 }
